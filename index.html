@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Tricolores x ORRTYL — Partenariat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --bg-card: #ffffff;
+  --blue: #2563eb;
+  --blue-light: #3b82f6;
+  --blue-dim: #eff6ff;
+  --blue-border: #bfdbfe;
+  --red: #dc2626;
+  --heading: #0f172a;
+  --body: #334155;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--body);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  flex-shrink: 0;
+}
+
+.logo-flag {
+  display: flex;
+  height: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+.logo-flag span { width: 7px; }
+.logo-flag .f-blue { background: #002395; }
+.logo-flag .f-white { background: #ffffff; }
+.logo-flag .f-red { background: #ED2939; }
+
+.logo-text {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--heading);
+}
+.logo-text em {
+  font-style: normal;
+  color: var(--muted);
+  font-weight: 400;
+  margin: 0 4px;
+}
+
+/* NAV */
+.tab-nav {
+  display: flex;
+  gap: 2px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--heading); background: var(--bg-alt); }
+.tab-btn.active {
+  color: var(--blue);
+  background: var(--blue-dim);
+  font-weight: 600;
+}
+
+/* PANELS */
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+  min-height: calc(100vh - 60px);
+}
+.tab-panel.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 72px 0; }
+section.alt { background: var(--bg-alt); }
+
+/* HERO */
+.hero {
+  padding: 88px 0 72px;
+  text-align: center;
+  background: var(--bg);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--blue-border);
+  background: var(--blue-dim);
+  padding: 5px 16px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 28px;
+}
+
+.tricolore-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.tricolore-dots span {
+  width: 6px; height: 6px; border-radius: 50%;
+}
+.tricolore-dots .d-blue { background: #2563eb; }
+.tricolore-dots .d-white { background: #94a3b8; border: 1px solid #e2e8f0; }
+.tricolore-dots .d-red { background: #dc2626; }
+
+.hero h1 {
+  font-size: clamp(34px, 5.5vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: var(--heading);
+  margin-bottom: 20px;
+}
+.hero h1 .accent-blue { color: var(--blue); }
+.hero h1 .accent-red  { color: var(--red); }
+
+.hero-subtitle {
+  font-size: clamp(16px, 2.2vw, 21px);
+  font-weight: 400;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.5;
+}
+
+/* SECTION LABELS */
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--heading);
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.55;
+}
+
+/* CARDS GRID */
+.cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+@media (max-width: 900px) { .cards-3 { grid-template-columns: 1fr; } }
+
+.cards-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+@media (max-width: 700px) { .cards-2 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-border);
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--blue-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.card-icon svg { width: 20px; height: 20px; color: var(--blue); }
+
+.card-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 10px;
+}
+.card-body {
+  font-size: 14px;
+  color: var(--body);
+  line-height: 1.65;
+}
+
+/* PITCH BOX */
+.pitch-box {
+  background: var(--blue-dim);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin: 48px 0;
+  font-size: 17px;
+  color: var(--heading);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* INFO BOX */
+.info-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-top: 32px;
+}
+.info-box-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 12px;
+}
+.info-box p {
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.65;
+}
+
+/* STATS GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+@media (max-width: 800px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+}
+.stat-number {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* TIMELINE */
+.timeline {
+  margin-top: 48px;
+  position: relative;
+  padding-left: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: -26px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--blue-border);
+}
+.timeline-period {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--blue);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.timeline-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 8px;
+}
+.timeline-body {
+  font-size: 14px;
+  color: var(--body);
+  line-height: 1.65;
+}
+
+/* BULLET LIST */
+.bullet-list {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--body);
+}
+.bullet-list li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* VALUES CARDS */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+@media (max-width: 800px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .values-grid { grid-template-columns: 1fr; } }
+
+.value-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.value-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 6px;
+}
+.value-card-body {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* EXPANDABLE CARDS */
+.expand-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.expand-card:hover { box-shadow: var(--shadow-sm); }
+.expand-card.open { border-color: var(--blue-border); box-shadow: var(--shadow-md); }
+
+.expand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+  gap: 16px;
+}
+.expand-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.expand-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--heading);
+}
+.expand-chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--muted);
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+.expand-card.open .expand-chevron { transform: rotate(180deg); }
+
+.expand-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.expand-body-inner {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--border-light);
+  margin-top: 0;
+}
+.expand-body-inner .sub-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+.expand-body-inner p {
+  font-size: 14px;
+  color: var(--body);
+  line-height: 1.65;
+}
+
+/* SECTOR BADGE */
+.sector-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.badge-blue   { background: #dbeafe; color: #1d4ed8; }
+.badge-green  { background: #dcfce7; color: #16a34a; }
+.badge-purple { background: #f3e8ff; color: #7c3aed; }
+.badge-pink   { background: #fce7f3; color: #be185d; }
+.badge-orange { background: #ffedd5; color: #c2410c; }
+.badge-teal   { background: #ccfbf1; color: #0f766e; }
+.badge-amber  { background: #fef3c7; color: #92400e; }
+.badge-indigo { background: #e0e7ff; color: #3730a3; }
+.badge-slate  { background: #f1f5f9; color: #475569; }
+
+/* CARDS 5 and 10-column grids */
+.cards-10 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+@media (max-width: 700px) { .cards-10 { grid-template-columns: 1fr; } }
+
+/* PROJECTION BOX */
+.projection-box {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  margin-top: 48px;
+}
+.projection-box p {
+  font-size: 16px;
+  color: var(--heading);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.projection-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 600px) { .projection-numbers { grid-template-columns: 1fr; } }
+.proj-num {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.proj-num-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -1px;
+  margin-bottom: 4px;
+}
+.proj-num-label {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* TOOL CARDS */
+.tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.tool-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-border);
+}
+.tool-card-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 6px;
+}
+.tool-card-tagline {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.tool-card-desc {
+  font-size: 14px;
+  color: var(--body);
+  line-height: 1.65;
+}
+.tool-features {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tool-feature-pill {
+  font-size: 12px;
+  background: var(--bg-alt);
+  color: var(--muted);
+  padding: 3px 10px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+@media (max-width: 700px) { .tools-grid { grid-template-columns: 1fr; } }
+
+/* TECH BADGES */
+.tech-section {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.tech-row {
+  margin-bottom: 24px;
+}
+.tech-row-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tech-pill {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.tech-pill-ai   { background: #fdf4ff; color: #7c3aed; border-color: #e9d5ff; }
+.tech-pill-tool { background: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+.tech-pill-fw   { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+
+/* PACK CARDS */
+.pack-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.pack-card:hover { box-shadow: var(--shadow-sm); }
+.pack-card.open { border-color: var(--blue-border); box-shadow: var(--shadow-md); }
+
+.pack-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  cursor: pointer;
+  user-select: none;
+  gap: 16px;
+}
+.pack-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  flex-direction: column;
+}
+.pack-header-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.pack-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading);
+}
+.pack-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-dim);
+  padding: 3px 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.pack-features-preview {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.pack-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.pack-body-inner {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--border-light);
+}
+.pack-body-inner .sub-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+.pack-body-inner p {
+  font-size: 14px;
+  color: var(--body);
+  line-height: 1.65;
+}
+
+/* STEP CARDS */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 48px 0;
+}
+@media (max-width: 800px) { .steps-grid { grid-template-columns: 1fr; } }
+
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.step-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 10px;
+}
+.step-body {
+  font-size: 14px;
+  color: var(--body);
+  line-height: 1.65;
+}
+
+/* ENGAGEMENT BOX */
+.engagement-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+/* CONTACT BOX */
+.contact-box {
+  background: var(--blue-dim);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.contact-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 4px;
+}
+.contact-detail {
+  font-size: 14px;
+  color: var(--muted);
+}
+.contact-avail {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  background: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid var(--blue-border);
+}
+
+/* FOOTER */
+.site-footer {
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--bg-alt);
+}
+
+/* POTENTIAL BOX */
+.potential-box {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--blue);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 24px 28px;
+  margin-top: 40px;
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 16px; }
+  section { padding: 48px 0; }
+  .hero { padding: 56px 0 48px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-flag">
+        <span class="f-blue"></span>
+        <span class="f-white"></span>
+        <span class="f-red"></span>
+      </div>
+      <div class="logo-text">Les Tricolores <em>x</em> ORRTYL</div>
+    </div>
+    <nav class="tab-nav" role="tablist">
+      <button class="tab-btn active" data-tab="partenariat" role="tab">Le Partenariat</button>
+      <button class="tab-btn" data-tab="parcours" role="tab">Mon Parcours</button>
+      <button class="tab-btn" data-tab="courtage" role="tab">Expertise Courtage</button>
+      <button class="tab-btn" data-tab="realisations" role="tab">Nos R&#233;alisations</button>
+      <button class="tab-btn" data-tab="outils" role="tab">Nos Outils</button>
+      <button class="tab-btn" data-tab="secteurs" role="tab">Solutions Tech &amp; IA par Secteur</button>
+      <button class="tab-btn" data-tab="etapes" role="tab">Prochaines &#201;tapes</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ================================ TAB 1 : PARTENARIAT ================================ -->
+<div class="tab-panel active" id="tab-partenariat" role="tabpanel">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <div class="tricolore-dots">
+          <span class="d-blue"></span>
+          <span class="d-white"></span>
+          <span class="d-red"></span>
+        </div>
+        Partenariat confidentiel — Mai 2026
+      </div>
+      <h1>Les Tricolores <span class="accent-blue">x</span> <span class="accent-red">ORRTYL</span></h1>
+      <p class="hero-subtitle">Accompagnons vos clients avec des solutions digitales sur mesure</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="pitch-box">
+        Vous domiciliez des milliers d&#8217;entreprises. Elles ont besoin d&#8217;outils digitaux, d&#8217;automatisations et d&#8217;assurance. Ensemble, on peut leur proposer une offre compl&#232;te &#8212; sur mesure, d&#233;ploy&#233;e rapidement, &#224; moindre co&#251;t. L&#8217;id&#233;e est simple&#160;: industrialiser un process qui tourne, sans que &#231;a devienne une usine op&#233;rationnelle de votre c&#244;t&#233;.
+      </div>
+
+      <div class="cards-3">
+        <div class="card">
+          <div class="card-label">Votre force</div>
+          <div class="card-title">Le r&#233;seau</div>
+          <div class="card-body">+15&#160;000 entreprises domicili&#233;es, 15 &#233;tablissements, une marque reconnue. Vous avez le canal de distribution. Chaque client est une opportunit&#233; de revenu additionnel.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Mon expertise</div>
+          <div class="card-title">Le terrain et la tech</div>
+          <div class="card-body">15 ans d&#8217;exp&#233;rience en courtage, finance et entrepreneuriat. 32+ projets livr&#233;s, 30 applications en production. Je ma&#238;trise le m&#233;tier ET la technologie.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">L&#8217;opportunit&#233;</div>
+          <div class="card-title">La valeur &#224; r&#233;cup&#233;rer</div>
+          <div class="card-body">Vos clients ach&#232;tent d&#233;j&#224; ailleurs ce qu&#8217;on pourrait leur proposer directement&#160;: CRM, automatisations, assurances, sites web. R&#233;cup&#233;rons cette valeur ensemble.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ================================ TAB 2 : PARCOURS ================================ -->
+<div class="tab-panel" id="tab-parcours" role="tabpanel">
+
+  <section>
+    <div class="container">
+      <div class="section-label">Parcours</div>
+      <h2 class="section-title">Une trajectoire au croisement du m&#233;tier et de la technologie</h2>
+      <p class="section-subtitle">15 ans de terrain. Du courtage traditionnel &#224; l&#8217;IA et au digital.</p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2010 &#8212; 2014</div>
+          <div class="timeline-title">AXA France &#8212; Les fondations</div>
+          <div class="timeline-body">J&#8217;ai d&#233;marr&#233; dans la gestion de patrimoine chez AXA. C&#8217;est l&#224; que j&#8217;ai appris la rigueur du m&#233;tier, la relation client, et les m&#233;caniques de l&#8217;assurance. Une base solide qui structure encore tout ce que je fais aujourd&#8217;hui.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2014</div>
+          <div class="timeline-title">Cr&#233;ation de Decisium &#8212; L&#8217;entrepreneuriat</div>
+          <div class="timeline-body">Avec mon associ&#233; Dov Licha, on a fusionn&#233; nos cabinets de courtage (Pro-ASP, Net Sant&#233; Courtage) pour cr&#233;er Groupe Decisium. Trois p&#244;les&#160;: Assurances, Cr&#233;dit immobilier, Conseil patrimonial. Partenaires&#160;: AXA, Generali, Allianz, BNP, Soci&#233;t&#233; G&#233;n&#233;rale.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2014 &#8212; 2020</div>
+          <div class="timeline-title">Le d&#233;veloppement &#8212; De la boutique &#224; la structure</div>
+          <div class="timeline-body">J&#8217;ai fait passer Decisium de la boutique artisanale &#224; une organisation structur&#233;e&#160;: points de vente, process, recrutements, &#233;largissement d&#8217;offres. Construction d&#8217;&#233;quipes commerciales performantes. Gestion de la tr&#233;sorerie, arbitrages financiers, management. La r&#233;alit&#233; du terrain, avec ses erreurs co&#251;teuses et ses r&#233;ussites partag&#233;es.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2020</div>
+          <div class="timeline-title">La bascule &#8212; Covid et remise en question</div>
+          <div class="timeline-body">La crise Covid a profond&#233;ment &#233;branl&#233; mes entreprises&#160;: activit&#233; ralentie, &#233;quipes en tension, n&#233;cessit&#233; d&#8217;adapter les offres. Quelques mois plus tard, un accident est venu bouleverser ma vie personnelle. Ces deux chocs successifs ont marqu&#233; une bascule dans ma trajectoire et dans ma mani&#232;re d&#8217;accompagner les dirigeants.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2022</div>
+          <div class="timeline-title">ORTYL &#8212; Par un dirigeant, pour les dirigeants</div>
+          <div class="timeline-body">J&#8217;ai cr&#233;&#233; ORTYL pour accompagner d&#8217;autres dirigeants en tant que consultant en strat&#233;gie. ORTYL, ce sont les initiales de mes enfants. Une pratique fond&#233;e sur le one-to-one&#160;: des s&#233;ances personnalis&#233;es, exigeantes et r&#233;guli&#232;res, o&#249; l&#8217;on confronte les id&#233;es, clarifie les priorit&#233;s et construit des plans concrets. L&#8217;IA comme levier de pilotage, pas comme gadget.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">15 juillet 2024</div>
+          <div class="timeline-title">Alya en Isra&#235;l</div>
+          <div class="timeline-body">L&#8217;installation en Isra&#235;l marque un tournant. Un nouveau chapitre personnel et professionnel. C&#8217;est ce qui d&#233;clenche l&#8217;envie d&#8217;un nouveau switch&#160;: construire quelque chose de neuf, pilotable &#224; distance, ancr&#233; dans le concret.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2025</div>
+          <div class="timeline-title">Agence ORRTYL &#8212; Le d&#233;ploiement op&#233;rationnel</div>
+          <div class="timeline-body">En compl&#233;ment de la vision &#171;&#160;par un dirigeant, pour les dirigeants&#160;&#187;, l&#8217;agence ORRTYL vient ajouter la brique qui manquait&#160;: le d&#233;ploiement r&#233;el. ORRTYL avec deux R, parce que je me suis associ&#233; avec un tech dont le fils s&#8217;appelle Rapha&#235;l. On ne fait plus que conseiller &#8212; on construit, on livre, on met en production. 32 projets d&#233;ploy&#233;s en moins d&#8217;un an, dans 12 secteurs diff&#233;rents. L&#8217;activit&#233; est d&#233;sormais enti&#232;rement install&#233;e en Isra&#235;l.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2026</div>
+          <div class="timeline-title">Un mod&#232;le r&#233;current et scalable</div>
+          <div class="timeline-body">L&#8217;objectif est clair&#160;: construire un mod&#232;le bas&#233; sur du r&#233;current, en vendant des licences et des forfaits d&#8217;accompagnement pour le sur mesure. Scaler l&#8217;activit&#233; en s&#8217;appuyant sur des partenariats structurants et une offre packag&#233;e par secteur.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-label">Mes forces</div>
+      <h2 class="section-title">Ce que j&#8217;ai appris &#224; faire, vraiment</h2>
+      <ul class="bullet-list">
+        <li>Identifier rapidement les signaux faibles</li>
+        <li>Garder la main sur les chiffres et les acc&#232;s vitaux</li>
+        <li>Distinguer ce qui est prioritaire de ce qui ne l&#8217;est pas</li>
+        <li>Piloter avec lucidit&#233; et m&#233;thode</li>
+        <li>D&#233;velopper une v&#233;ritable r&#233;silience</li>
+      </ul>
+
+      <div style="margin-top: 48px;">
+        <div class="section-label">Mes valeurs</div>
+        <h2 class="section-title" style="margin-bottom: 4px;">Ce qui guide chaque d&#233;cision</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card-title">&#201;thique</div>
+          <div class="value-card-body">Agir dans la transparence, sans surpromesse</div>
+        </div>
+        <div class="value-card">
+          <div class="value-card-title">Pragmatisme</div>
+          <div class="value-card-body">Fonder chaque d&#233;cision sur des donn&#233;es et des faits</div>
+        </div>
+        <div class="value-card">
+          <div class="value-card-title">Sur mesure</div>
+          <div class="value-card-body">Adapter chaque accompagnement au besoin r&#233;el</div>
+        </div>
+        <div class="value-card">
+          <div class="value-card-title">Transmission</div>
+          <div class="value-card-body">Rendre le dirigeant autonome, pas d&#233;pendant</div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">ans d&#8217;exp&#233;rience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">32+</div>
+          <div class="stat-label">projets livr&#233;s</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">30</div>
+          <div class="stat-label">applications en production</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">secteurs d&#8217;activit&#233;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ================================ TAB 3 : EXPERTISE COURTAGE ================================ -->
+<div class="tab-panel" id="tab-courtage" role="tabpanel">
+
+  <section>
+    <div class="container">
+      <div class="section-label">Expertise m&#233;tier</div>
+      <h2 class="section-title">Ce que j&#8217;apporte pour votre filiale courtage</h2>
+      <p class="section-subtitle">15 ans d&#8217;exp&#233;rience en courtage d&#8217;assurance au service de votre projet</p>
+
+      <div class="cards-10">
+
+        <div class="card">
+          <div class="card-title">Gestion des compagnies</div>
+          <div class="card-body">Ouverture et gestion des relations avec toutes les compagnies d&#8217;assurance. Je connais les interlocuteurs, les processus, les d&#233;lais. Les codes compagnies (AXA, Generali, Allianz, etc.) sont longs &#224; obtenir &#8212; j&#8217;ai l&#8217;exp&#233;rience pour acc&#233;l&#233;rer le processus.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">N&#233;gociation des commissions</div>
+          <div class="card-body">N&#233;gociation des taux de commissionnement aupr&#232;s des compagnies. Optimisation de la marge sur chaque produit. Connaissance des grilles et des leviers de n&#233;gociation.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Ma&#238;trise r&#233;glementaire</div>
+          <div class="card-body">ORIAS, codes compagnies, conformit&#233;, proc&#233;dures d&#8217;agr&#233;ment. Je connais les &#233;tapes pour cr&#233;er et structurer un cabinet de courtage de A &#224; Z. Conseil strat&#233;gique&#160;: ouvrir l&#8217;ORIAS en nom propre d&#8217;abord, puis transf&#233;rer &#224; la filiale &#8212; c&#8217;est plus rapide.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Conception de produits</div>
+          <div class="card-body">Cr&#233;ation de produits d&#8217;assurance en marque blanche. Par exemple, une RC Pro Entrepreneur estampill&#233;e Les Tricolores, n&#233;goci&#233;e directement avec AXA ou Generali en tant que courtier grossiste. Marge sup&#233;rieure (30-40%).</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">R&#233;seau de contacts</div>
+          <div class="card-body">Contacts directs dans chaque compagnie partenaire. Un carnet d&#8217;adresses construit sur 15 ans de terrain&#160;: souscripteurs, inspecteurs, directeurs de r&#233;seau.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Supervision et pilotage</div>
+          <div class="card-body">Un fil mensuel r&#233;current de conseil et supervision. Je chapeaute la strat&#233;gie et la technique, vous mettez en place les &#233;quipes internes. Pilotage &#224; distance, sans frais de structure.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Automatisations m&#233;tier</div>
+          <div class="card-body">Workflows automatis&#233;s pour le courtage&#160;: relances clients, suivi de souscription, gestion des sinistres, reporting compagnies, alertes d&#8217;&#233;ch&#233;ance de contrats. On automatise tout ce qui est r&#233;p&#233;titif pour que l&#8217;&#233;quipe se concentre sur le commercial.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">CRM et int&#233;grations API</div>
+          <div class="card-body">Ma&#238;trise des CRM m&#233;tier assurance existants sur le march&#233;. Capacit&#233; &#224; les connecter en API avec les syst&#232;mes d&#233;j&#224; en place &#8212; compagnies, comparateurs, outils de gestion. On s&#8217;adapte &#224; l&#8217;existant, on ne force pas &#224; tout changer.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Offres d&#8217;assurance par type d&#8217;activit&#233;</div>
+          <div class="card-body">Cr&#233;ation de classes de produits sp&#233;cifiques selon le m&#233;tier de vos clients domicili&#233;s. Un pack assurance restaurateur, un pack taxi, un pack profession lib&#233;rale, un pack BTP, un pack e-commerce. Des produits pr&#234;ts &#224; vendre, adapt&#233;s &#224; chaque segment de votre base clients.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Recrutement et structuration d&#8217;&#233;quipe</div>
+          <div class="card-body">Accompagnement sur le recrutement de profils m&#233;tier &#8212; il faut quelqu&#8217;un du secteur, pas un commercial g&#233;n&#233;raliste. Structuration de l&#8217;&#233;quipe, formation, mont&#233;e en comp&#233;tence, d&#233;finition des process internes.</div>
+        </div>
+
+      </div>
+
+      <div class="potential-box">
+        <strong>Le potentiel&#160;:</strong> Vos 15&#160;000 entreprises domicili&#233;es ont toutes besoin d&#8217;assurance&#160;: RC Professionnelle, Multirisque, Sant&#233; collective, Pr&#233;voyance, Cyber-risque, Homme-cl&#233;. C&#8217;est un flux naturel de cross-selling sur une base clients d&#233;j&#224; captive.
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ================================ TAB 4 : REALISATIONS ================================ -->
+<div class="tab-panel" id="tab-realisations" role="tabpanel">
+
+  <section>
+    <div class="container">
+      <div class="section-label">R&#233;alisations</div>
+      <h2 class="section-title">Ce qu&#8217;on sait faire, secteur par secteur</h2>
+      <p class="section-subtitle">32 projets en moins d&#8217;un an. Voici les comp&#233;tences et fonctionnalit&#233;s que nous avons d&#233;velopp&#233;es dans chaque domaine.</p>
+
+      <div style="margin-top: 40px;">
+
+        <!-- 1. Assurance & Finance -->
+        <div class="expand-card" id="ec-1">
+          <div class="expand-header" onclick="toggleExpand('ec-1')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-blue">Assurance &amp; Finance</span>
+              <span class="expand-title">Plateforme courtage multi-compagnies</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-1">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>Plateforme de devis multi-compagnies (API OGGO Data, 13 produits) &#8212; CRM courtage complet &#8212; Int&#233;gration comptable Penny Lane &#8212; Workflow automatis&#233; de bout en bout &#8212; Kanban de 52 livrables &#8212; Suivi de mission client interactif &#8212; Double interface franchis&#233;/client &#8212; Authentification QR code</p>
+              <div class="sub-title">Apport client</div>
+              <p>Chaque point de vente devient un distributeur d&#8217;assurance sans recrutement. Cabinet structur&#233; avec processus document&#233;s et pilotage quotidien.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>Analyse de risques automatis&#233;e &#8212; Routage intelligent des demandes &#8212; Aide &#224; la souscription &#8212; Pr&#233;-qualification des prospects</p>
+              <div class="sub-title">Stack technique</div>
+              <p>Next.js &#8212; React &#8212; PostgreSQL &#8212; OAuth 1.0 &#8212; Penny Lane API &#8212; MinIO S3</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Restauration & Alimentation -->
+        <div class="expand-card" id="ec-2">
+          <div class="expand-header" onclick="toggleExpand('ec-2')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-green">Restauration &amp; Alimentation</span>
+              <span class="expand-title">Site, commandes WhatsApp et CRM fid&#233;lit&#233;</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-2">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>Site vitrine + eCommerce &#8212; Chatbot WhatsApp IA (commande vocale + paiement) &#8212; CRM fid&#233;lit&#233; client &#8212; Automatisation comptable iCount &#8212; Campagnes Meta et TikTok &#8212; CRM WhatsApp auto-h&#233;berg&#233; (0 euro de messaging) &#8212; Mass messaging avec anti-ban &#8212; Templates personnalis&#233;s</p>
+              <div class="sub-title">Apport client</div>
+              <p>Du z&#233;ro au restaurant op&#233;rationnel avec commande WhatsApp automatis&#233;e. Communication client gratuite et professionnelle. Comptabilit&#233; en temps r&#233;el.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>Chatbot conversationnel pour prise de commande &#8212; G&#233;n&#233;ration de contenu social media &#8212; Analyse des habitudes client &#8212; Transcription audio des commandes vocales</p>
+              <div class="sub-title">Stack technique</div>
+              <p>Next.js &#8212; WhatsApp Business API &#8212; Claude AI &#8212; Evolution API &#8212; iCount &#8212; BullMQ &#8212; Redis</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Associations & Education -->
+        <div class="expand-card" id="ec-3">
+          <div class="expand-header" onclick="toggleExpand('ec-3')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-purple">Associations &amp; &#201;ducation</span>
+              <span class="expand-title">Site multilingue, dons et re&#231;us fiscaux</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-3">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>Site multilingue FR/HE avec RTL natif &#8212; Plateforme de dons Stripe &#8212; Re&#231;us fiscaux PDF auto-g&#233;n&#233;r&#233;s &#8212; Emailing automatis&#233; Resend &#8212; Gestion associative &#8212; Business plan et mod&#233;lisation financi&#232;re (3 sc&#233;narios) &#8212; Matrice de risques &#8212; Structure de gouvernance</p>
+              <div class="sub-title">Apport client</div>
+              <p>Collecte de dons digitalis&#233;e, fin des virements manuels. Dossiers solides pour convaincre les donateurs institutionnels.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>G&#233;n&#233;ration de contenus multilingues &#8212; Analyse financi&#232;re pr&#233;dictive &#8212; Aide &#224; la r&#233;daction de dossiers &#8212; Traduction automatique</p>
+              <div class="sub-title">Stack technique</div>
+              <p>Next.js 16 &#8212; React 19 &#8212; Better Auth &#8212; Stripe &#8212; MinIO S3 &#8212; Resend &#8212; PostgreSQL</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Evenementiel & Tourisme -->
+        <div class="expand-card" id="ec-4">
+          <div class="expand-header" onclick="toggleExpand('ec-4')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-pink">&#201;v&#233;nementiel &amp; Tourisme</span>
+              <span class="expand-title">Consolidation multi-entit&#233;s et dashboard unifi&#233;</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-4">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>Consolidation financi&#232;re multi-entit&#233;s (9 structures) &#8212; CRM multi-flux &#8212; Dashboard unifi&#233; &#8212; Gestion tr&#233;sorerie inter-entit&#233;s &#8212; Int&#233;gration Penny Lane &#8212; Syst&#232;me d&#8217;inscriptions AlloColo &#8212; Plateforme de conciergerie premium</p>
+              <div class="sub-title">Apport client</div>
+              <p>Visibilit&#233; unifi&#233;e sur des structures complexes. Reprise de contr&#244;le sur la tr&#233;sorerie. Un seul dashboard au lieu de fichiers Excel dispers&#233;s.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>Consolidation et analyse financi&#232;re automatis&#233;e &#8212; Alertes de tr&#233;sorerie &#8212; Pr&#233;visions de flux &#8212; Classification automatique des &#233;critures</p>
+              <div class="sub-title">Stack technique</div>
+              <p>Next.js &#8212; Penny Lane API &#8212; AlloColo API &#8212; Claude AI &#8212; PostgreSQL</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. BTP & Artisanat -->
+        <div class="expand-card" id="ec-5">
+          <div class="expand-header" onclick="toggleExpand('ec-5')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-orange">BTP &amp; Artisanat</span>
+              <span class="expand-title">Automatisation ERP et workflows chantier</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-5">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>Automatisation ERP Kalitics &#8212; 8 sc&#233;narios n8n (synchro devis, relance paiement, reporting chantier, alertes RH) &#8212; Workflows connect&#233;s &#8212; Analyse API compl&#232;te</p>
+              <div class="sub-title">Apport client</div>
+              <p>R&#233;duction significative des t&#226;ches manuelles. Gain de productivit&#233; administrative imm&#233;diat. L&#8217;&#233;quipe se concentre sur le terrain.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>D&#233;tection d&#8217;anomalies dans les flux &#8212; Pr&#233;diction de retards chantier &#8212; Reporting intelligent &#8212; Alertes proactives</p>
+              <div class="sub-title">Stack technique</div>
+              <p>n8n &#8212; API REST &#8212; Kalitics &#8212; VPS d&#233;di&#233;</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Services & Marketplace -->
+        <div class="expand-card" id="ec-6">
+          <div class="expand-header" onclick="toggleExpand('ec-6')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-teal">Services &amp; Marketplace</span>
+              <span class="expand-title">Plateforme op&#233;rationnelle et mise en relation automatis&#233;e</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-6">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>Plateforme op&#233;rationnelle compl&#232;te (catalogue, CRM, devis) &#8212; Marketplace services &#224; domicile (matching g&#233;olocalis&#233;, paiement Stripe, notifications temps r&#233;el) &#8212; WhatsApp Business avec routage IA &#8212; Dashboards prestataire et client</p>
+              <div class="sub-title">Apport client</div>
+              <p>Transformation digitale compl&#232;te &#8212; du papier &#224; la plateforme. Mise en relation automatis&#233;e prestataire-client avec paiement s&#233;curis&#233;.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>Routage IA des conversations WhatsApp (Claude) &#8212; Matching intelligent prestataires/clients &#8212; Qualification automatique des demandes &#8212; G&#233;n&#233;ration de devis assist&#233;e</p>
+              <div class="sub-title">Stack technique</div>
+              <p>Next.js &#8212; WhatsApp Business API &#8212; Claude AI &#8212; Stripe &#8212; PostgreSQL &#8212; WebSockets</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Energie Renouvelable -->
+        <div class="expand-card" id="ec-7">
+          <div class="expand-header" onclick="toggleExpand('ec-7')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-amber">&#201;nergie Renouvelable</span>
+              <span class="expand-title">CRM m&#233;tier ENR et qualification leads</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-7">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>CRM sp&#233;cialis&#233; ENR &#8212; Gestion de dossiers &#233;nergie &#8212; Qualification leads &#8212; Suivi de production &#8212; Reporting &#8212; Lettre de mission d&#233;di&#233;e</p>
+              <div class="sub-title">Apport client</div>
+              <p>CRM m&#233;tier d&#233;di&#233; au lieu d&#8217;outils g&#233;n&#233;riques inadapt&#233;s. Processus de qualification structur&#233;.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>Qualification automatique des prospects &#8212; Scoring de leads &#8212; Pr&#233;diction de rentabilit&#233; des installations</p>
+              <div class="sub-title">Stack technique</div>
+              <p>CRM custom &#8212; PostgreSQL &#8212; Redis</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Sport & Loisirs -->
+        <div class="expand-card" id="ec-8">
+          <div class="expand-header" onclick="toggleExpand('ec-8')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-indigo">Sport &amp; Loisirs</span>
+              <span class="expand-title">Plateforme de gestion de club</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-8">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>Plateforme de gestion de club (r&#233;servation terrains, gestion adh&#233;rents, facturation, communication) &#8212; Cahier des charges complet &#8212; Lettre de mission interactive</p>
+              <div class="sub-title">Apport client</div>
+              <p>Gestion professionnelle du club. Cadrage fonctionnel garanti avant le d&#233;veloppement.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>Optimisation des plannings &#8212; Communication automatis&#233;e avec les adh&#233;rents &#8212; Pr&#233;diction de fr&#233;quentation</p>
+              <div class="sub-title">Stack technique</div>
+              <p>Next.js &#8212; Design System</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Finance & Comptabilite -->
+        <div class="expand-card" id="ec-9">
+          <div class="expand-header" onclick="toggleExpand('ec-9')">
+            <div class="expand-header-left">
+              <span class="sector-badge badge-slate">Finance &amp; Comptabilit&#233;</span>
+              <span class="expand-title">BI financi&#232;re IA et automatisation comptable</span>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="expand-body" id="eb-9">
+            <div class="expand-body-inner">
+              <div class="sub-title">Fonctionnalit&#233;s d&#233;velopp&#233;es</div>
+              <p>BI financi&#232;re avec IA (import FEC, analyse P&amp;L/bilan/tr&#233;sorerie, scoring, KPIs) &#8212; Automatisation comptable &#8212; Conformit&#233; bureau de change (FASP, KYC, AML) &#8212; Rapports auto-g&#233;n&#233;r&#233;s</p>
+              <div class="sub-title">Apport client</div>
+              <p>Les dirigeants comprennent leurs chiffres, pas juste les voient. Aide &#224; la d&#233;cision bas&#233;e sur les donn&#233;es.</p>
+              <div class="sub-title">Impl&#233;mentation IA</div>
+              <p>Analyse financi&#232;re Claude AI &#8212; D&#233;tection d&#8217;anomalies comptables &#8212; Rapports narratifs auto-g&#233;n&#233;r&#233;s &#8212; Scoring et pr&#233;dictions</p>
+              <div class="sub-title">Stack technique</div>
+              <p>Next.js &#8212; Prisma &#8212; Claude AI &#8212; PostgreSQL</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ================================ TAB 5 : OUTILS ================================ -->
+<div class="tab-panel" id="tab-outils" role="tabpanel">
+
+  <section>
+    <div class="container">
+      <div class="section-label">Nos outils</div>
+      <h2 class="section-title">Ce qu&#8217;on a construit pour industrialiser</h2>
+      <p class="section-subtitle">Des outils int&#233;gr&#233;s et d&#233;j&#224; op&#233;rationnels, pr&#234;ts &#224; &#234;tre d&#233;ploy&#233;s pour vos clients.</p>
+
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <div class="tool-card-name">SiteAutoAI</div>
+          <div class="tool-card-tagline">Site professionnel en moins d&#8217;une heure</div>
+          <div class="tool-card-desc">G&#233;n&#233;ration automatique de sites vitrines et eCommerce &#224; partir d&#8217;un formulaire. Design professionnel, h&#233;bergement inclus, nom de domaine, SSL. Adapt&#233; &#224; chaque secteur d&#8217;activit&#233; (restaurant, artisan, profession lib&#233;rale, association). La cr&#233;ation d&#8217;un site ne doit plus &#234;tre un chantier.</div>
+          <div class="tool-features">
+            <span class="tool-feature-pill">G&#233;n&#233;ration IA</span>
+            <span class="tool-feature-pill">eCommerce</span>
+            <span class="tool-feature-pill">Multi-secteurs</span>
+            <span class="tool-feature-pill">H&#233;bergement inclus</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-name">FinPilot</div>
+          <div class="tool-card-tagline">Tableau de bord financier intelligent</div>
+          <div class="tool-card-desc">Import du FEC comptable, analyse automatique du P&amp;L, du bilan et de la tr&#233;sorerie. Scoring de sant&#233; financi&#232;re, d&#233;tection d&#8217;anomalies, alertes proactives. Rapports narratifs g&#233;n&#233;r&#233;s par IA pour que le dirigeant comprenne ses chiffres &#8212; pas juste les voie.</div>
+          <div class="tool-features">
+            <span class="tool-feature-pill">Import FEC</span>
+            <span class="tool-feature-pill">P&amp;L / Bilan</span>
+            <span class="tool-feature-pill">Rapports IA</span>
+            <span class="tool-feature-pill">Alertes</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-name">PLAUD Alternative</div>
+          <div class="tool-card-tagline">Transcription et synth&#232;se de r&#233;unions</div>
+          <div class="tool-card-desc">Transcription automatique des appels et r&#233;unions, synth&#232;se structur&#233;e, extraction des d&#233;cisions et actions. Une alternative auto-h&#233;berg&#233;e aux outils SaaS co&#251;teux. Id&#233;al pour les &#233;quipes qui font beaucoup de calls et ne veulent pas payer par minute.</div>
+          <div class="tool-features">
+            <span class="tool-feature-pill">Whisper AI</span>
+            <span class="tool-feature-pill">Synth&#232;se auto</span>
+            <span class="tool-feature-pill">Auto-h&#233;berg&#233;</span>
+            <span class="tool-feature-pill">Actions extraites</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-name">WhatsApp CRM Engine</div>
+          <div class="tool-card-tagline">CRM WhatsApp auto-h&#233;berg&#233; &#224; z&#233;ro co&#251;t de messaging</div>
+          <div class="tool-card-desc">CRM WhatsApp d&#233;ploy&#233; sur votre propre infrastructure. Mass messaging, anti-ban, templates personnalis&#233;s, routage IA des conversations entrants. Z&#233;ro co&#251;t de messaging &#8212; pas de facturation &#224; la conversation. D&#233;j&#224; utilis&#233; pour des restaurants, marketplaces et services &#224; domicile.</div>
+          <div class="tool-features">
+            <span class="tool-feature-pill">Auto-h&#233;berg&#233;</span>
+            <span class="tool-feature-pill">0 euro messaging</span>
+            <span class="tool-feature-pill">Routage IA</span>
+            <span class="tool-feature-pill">Anti-ban</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-name">CRM M&#233;tier</div>
+          <div class="tool-card-tagline">CRM sur mesure, adapt&#233; &#224; chaque m&#233;tier</div>
+          <div class="tool-card-desc">CRM d&#233;velopp&#233; et configur&#233; sp&#233;cifiquement selon le secteur d&#8217;activit&#233;. Chaque m&#233;tier a ses propres champs, workflows, et int&#233;grations. D&#233;j&#224; d&#233;ploy&#233; pour l&#8217;&#233;nergie renouvelable et le courtage assurance. Configurable en quelques jours pour n&#8217;importe quel secteur.</div>
+          <div class="tool-features">
+            <span class="tool-feature-pill">Sur mesure</span>
+            <span class="tool-feature-pill">Champs m&#233;tier</span>
+            <span class="tool-feature-pill">Workflows</span>
+            <span class="tool-feature-pill">Int&#233;grations API</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-name">G&#233;n&#233;rateur de Lettres de Mission</div>
+          <div class="tool-card-tagline">Lettres de mission interactives et pr&#233;cises</div>
+          <div class="tool-card-desc">G&#233;n&#233;ration de lettres de mission structur&#233;es &#224; partir d&#8217;un questionnaire guid&#233;. P&#233;rim&#232;tre, livrables, planning, tarification. Exportable en PDF sign&#233;. R&#233;duit le temps de cadrage de plusieurs heures &#224; quelques minutes. Utilis&#233; en amont de chaque projet.</div>
+          <div class="tool-features">
+            <span class="tool-feature-pill">Questionnaire IA</span>
+            <span class="tool-feature-pill">Export PDF</span>
+            <span class="tool-feature-pill">P&#233;rim&#232;tre</span>
+            <span class="tool-feature-pill">Signature</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-name">Infrastructure Auto-H&#233;berg&#233;e</div>
+          <div class="tool-card-tagline">Votre propre cloud, sans les frais SaaS</div>
+          <div class="tool-card-desc">D&#233;ploiement et gestion d&#8217;infrastructure auto-h&#233;berg&#233;e sur VPS. Coolify pour l&#8217;orchestration, Docker pour les conteneurs, Traefik pour le routage, MinIO pour le stockage. Les co&#251;ts fixes restent bas, m&#234;me quand le volume monte. Chaque outil qu&#8217;on livre peut &#234;tre h&#233;berg&#233; sur cette infrastructure.</div>
+          <div class="tool-features">
+            <span class="tool-feature-pill">Docker</span>
+            <span class="tool-feature-pill">Traefik</span>
+            <span class="tool-feature-pill">MinIO S3</span>
+            <span class="tool-feature-pill">Coolify</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TECHNOLOGIES SECTION -->
+      <div class="tech-section">
+        <div class="section-label">Technologies et comp&#233;tences</div>
+        <h3 class="section-title" style="font-size: 26px; margin-bottom: 32px;">La stack qu&#8217;on ma&#238;trise</h3>
+
+        <div class="tech-row">
+          <div class="tech-row-label">Intelligence Artificielle</div>
+          <div class="tech-pills">
+            <span class="tech-pill tech-pill-ai">Claude AI (Anthropic)</span>
+            <span class="tech-pill tech-pill-ai">OpenAI (GPT)</span>
+            <span class="tech-pill tech-pill-ai">Whisper (transcription)</span>
+            <span class="tech-pill tech-pill-ai">Puppeteer (scraping IA)</span>
+          </div>
+        </div>
+
+        <div class="tech-row">
+          <div class="tech-row-label">Outils et int&#233;grations</div>
+          <div class="tech-pills">
+            <span class="tech-pill tech-pill-tool">n8n</span>
+            <span class="tech-pill tech-pill-tool">Stripe</span>
+            <span class="tech-pill tech-pill-tool">Penny Lane</span>
+            <span class="tech-pill tech-pill-tool">iCount</span>
+            <span class="tech-pill tech-pill-tool">Evolution API</span>
+            <span class="tech-pill tech-pill-tool">HubSpot</span>
+            <span class="tech-pill tech-pill-tool">OGGO Data</span>
+            <span class="tech-pill tech-pill-tool">AlloColo</span>
+            <span class="tech-pill tech-pill-tool">Resend</span>
+            <span class="tech-pill tech-pill-tool">MinIO S3</span>
+            <span class="tech-pill tech-pill-tool">BullMQ</span>
+            <span class="tech-pill tech-pill-tool">Coolify</span>
+          </div>
+        </div>
+
+        <div class="tech-row">
+          <div class="tech-row-label">Frameworks et stacks</div>
+          <div class="tech-pills">
+            <span class="tech-pill tech-pill-fw">Next.js</span>
+            <span class="tech-pill tech-pill-fw">React</span>
+            <span class="tech-pill tech-pill-fw">Node.js</span>
+            <span class="tech-pill tech-pill-fw">TypeScript</span>
+            <span class="tech-pill tech-pill-fw">PostgreSQL</span>
+            <span class="tech-pill tech-pill-fw">Redis</span>
+            <span class="tech-pill tech-pill-fw">Prisma</span>
+            <span class="tech-pill tech-pill-fw">Docker</span>
+            <span class="tech-pill tech-pill-fw">Traefik</span>
+            <span class="tech-pill tech-pill-fw">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ================================ TAB 6 : SECTEURS ================================ -->
+<div class="tab-panel" id="tab-secteurs" role="tabpanel">
+
+  <section>
+    <div class="container">
+      <div class="section-label">Solutions Tech &amp; IA par Secteur</div>
+      <h2 class="section-title">Des offres packag&#233;es, pr&#234;tes &#224; vendre</h2>
+      <p class="section-subtitle">Notre objectif est de transformer nos outils, nos r&#233;alisations et notre expertise en offres packag&#233;es par secteur d&#8217;activit&#233;. Voici une &#233;bauche de ce que l&#8217;on pourrait r&#233;aliser et proposer aux clients des Tricolores.</p>
+
+      <div style="margin-top: 40px;">
+
+        <!-- Pack Restaurant -->
+        <div class="pack-card" id="pc-1">
+          <div class="pack-header" onclick="togglePack('pc-1')">
+            <div class="pack-header-left">
+              <div class="pack-header-top">
+                <span class="pack-title">Pack Restaurant / Traiteur</span>
+                <span class="pack-price">49 euros / mois</span>
+              </div>
+              <div class="pack-features-preview">Site vitrine + eCommerce &#8212; Chatbot WhatsApp commande + paiement &#8212; CRM clients et fid&#233;lit&#233; &#8212; Automatisation comptable &#8212; R&#233;seaux sociaux et campagnes</div>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="pack-body" id="pb-1">
+            <div class="pack-body-inner">
+              <div class="sub-title">Ce que &#231;a fait</div>
+              <p>Le restaurant re&#231;oit un site professionnel g&#233;n&#233;r&#233; en moins d&#8217;une heure. Un chatbot WhatsApp prend les commandes des clients, encaisse les paiements, et synchronise tout avec la comptabilit&#233; en temps r&#233;el. Le CRM g&#232;re la fid&#233;lit&#233; client, les campagnes de relance, et les promotions saisonni&#232;res. Les r&#233;seaux sociaux sont aliment&#233;s avec du contenu g&#233;n&#233;r&#233; automatiquement.</p>
+              <div class="sub-title">Comment &#231;a fonctionne</div>
+              <p>Souscription via Les Tricolores. D&#233;ploiement en 48h. Le restaurateur re&#231;oit ses acc&#232;s et une formation de 30 minutes. Tout est op&#233;rationnel imm&#233;diatement.</p>
+              <div class="sub-title">Outils mobilis&#233;s</div>
+              <p>G&#233;n&#233;rateur de sites IA &#8212; WhatsApp CRM Engine &#8212; CRM M&#233;tier &#8212; Int&#233;gration comptable</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pack Courtier -->
+        <div class="pack-card" id="pc-2">
+          <div class="pack-header" onclick="togglePack('pc-2')">
+            <div class="pack-header-left">
+              <div class="pack-header-top">
+                <span class="pack-title">Pack Courtier / Assurance</span>
+                <span class="pack-price">59 euros / mois</span>
+              </div>
+              <div class="pack-features-preview">Plateforme devis multi-compagnies &#8212; CRM clients et suivi sinistres &#8212; Comptabilit&#233; automatis&#233;e &#8212; Site vitrine professionnel</div>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="pack-body" id="pb-2">
+            <div class="pack-body-inner">
+              <div class="sub-title">Ce que &#231;a fait</div>
+              <p>Le courtier acc&#232;de &#224; une plateforme de comparaison et de souscription connect&#233;e aux compagnies d&#8217;assurance. Il g&#233;n&#232;re des devis personnalis&#233;s en quelques clics, suit ses clients dans un CRM d&#233;di&#233;, et automatise sa comptabilit&#233;. Son site vitrine professionnel est g&#233;n&#233;r&#233; automatiquement.</p>
+              <div class="sub-title">Comment &#231;a fonctionne</div>
+              <p>Configuration initiale&#160;: int&#233;gration des compagnies partenaires, import de la base clients, personnalisation du CRM. Formation sur l&#8217;outil. Accompagnement mensuel.</p>
+              <div class="sub-title">Outils mobilis&#233;s</div>
+              <p>Plateforme de devis &#8212; CRM M&#233;tier &#8212; Int&#233;gration comptable &#8212; G&#233;n&#233;rateur de sites IA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pack BTP -->
+        <div class="pack-card" id="pc-3">
+          <div class="pack-header" onclick="togglePack('pc-3')">
+            <div class="pack-header-left">
+              <div class="pack-header-top">
+                <span class="pack-title">Pack BTP / Artisan</span>
+                <span class="pack-price">49 euros / mois</span>
+              </div>
+              <div class="pack-features-preview">CRM chantiers et devis automatis&#233;s &#8212; Workflows connect&#233;s &#224; l&#8217;ERP &#8212; Facturation et relances &#8212; Site vitrine + portfolio</div>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="pack-body" id="pb-3">
+            <div class="pack-body-inner">
+              <div class="sub-title">Ce que &#231;a fait</div>
+              <p>L&#8217;artisan g&#232;re ses chantiers, ses devis et sa facturation depuis un seul outil. Les t&#226;ches r&#233;p&#233;titives sont automatis&#233;es&#160;: relances de paiement, notifications de chantier, reporting mensuel. Son site vitrine avec portfolio de r&#233;alisations est g&#233;n&#233;r&#233; automatiquement.</p>
+              <div class="sub-title">Comment &#231;a fonctionne</div>
+              <p>Audit des outils existants. Migration et configuration du CRM. Connexion aux workflows d&#8217;automatisation. Formation de l&#8217;&#233;quipe.</p>
+              <div class="sub-title">Outils mobilis&#233;s</div>
+              <p>CRM M&#233;tier &#8212; Workflows n8n &#8212; G&#233;n&#233;rateur de sites IA &#8212; Int&#233;gration comptable</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pack Commerce -->
+        <div class="pack-card" id="pc-4">
+          <div class="pack-header" onclick="togglePack('pc-4')">
+            <div class="pack-header-left">
+              <div class="pack-header-top">
+                <span class="pack-title">Pack Commerce</span>
+                <span class="pack-price">39 euros / mois</span>
+              </div>
+              <div class="pack-features-preview">Site eCommerce &#8212; CRM + WhatsApp marketing &#8212; Analyse prix concurrentielle &#8212; Gestion stock et commandes</div>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="pack-body" id="pb-4">
+            <div class="pack-body-inner">
+              <div class="sub-title">Ce que &#231;a fait</div>
+              <p>Le commer&#231;ant vend en ligne avec un site eCommerce connect&#233; &#224; sa gestion de stock. Le CRM WhatsApp lui permet d&#8217;envoyer des promotions cibl&#233;es &#224; ses clients. L&#8217;outil d&#8217;analyse prix surveille automatiquement les tarifs de la concurrence.</p>
+              <div class="sub-title">Comment &#231;a fonctionne</div>
+              <p>Cr&#233;ation du site eCommerce. Configuration du catalogue produits. Mise en place du CRM WhatsApp. Activation de la veille prix.</p>
+              <div class="sub-title">Outils mobilis&#233;s</div>
+              <p>G&#233;n&#233;rateur de sites IA &#8212; WhatsApp CRM Engine &#8212; CRM M&#233;tier &#8212; Module d&#8217;analyse prix</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pack Association -->
+        <div class="pack-card" id="pc-5">
+          <div class="pack-header" onclick="togglePack('pc-5')">
+            <div class="pack-header-left">
+              <div class="pack-header-top">
+                <span class="pack-title">Pack Association</span>
+                <span class="pack-price">35 euros / mois</span>
+              </div>
+              <div class="pack-features-preview">Site multilingue (FR / HE / EN) &#8212; Plateforme de dons Stripe &#8212; Re&#231;us fiscaux automatiques &#8212; Emailing et communication</div>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="pack-body" id="pb-5">
+            <div class="pack-body-inner">
+              <div class="sub-title">Ce que &#231;a fait</div>
+              <p>L&#8217;association re&#231;oit un site professionnel multilingue avec support RTL pour l&#8217;h&#233;breu et l&#8217;arabe. La plateforme de dons Stripe est int&#233;gr&#233;e nativement. Chaque don g&#233;n&#232;re automatiquement un re&#231;u fiscal PDF. L&#8217;emailing maintient le lien avec les donateurs.</p>
+              <div class="sub-title">Comment &#231;a fonctionne</div>
+              <p>Cr&#233;ation du site avec le contenu de l&#8217;association. Configuration Stripe et g&#233;n&#233;ration des re&#231;us. Mise en place de l&#8217;emailing. Formation du responsable.</p>
+              <div class="sub-title">Outils mobilis&#233;s</div>
+              <p>G&#233;n&#233;rateur de sites IA &#8212; Stripe &#8212; Emailing Resend &#8212; G&#233;n&#233;ration PDF</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pack Profession Liberale -->
+        <div class="pack-card" id="pc-6">
+          <div class="pack-header" onclick="togglePack('pc-6')">
+            <div class="pack-header-left">
+              <div class="pack-header-top">
+                <span class="pack-title">Pack Profession Lib&#233;rale</span>
+                <span class="pack-price">39 euros / mois</span>
+              </div>
+              <div class="pack-features-preview">Site vitrine + prise de RDV en ligne &#8212; CRM clients &#8212; Facturation et comptabilit&#233; &#8212; Agenda et automatisations</div>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="pack-body" id="pb-6">
+            <div class="pack-body-inner">
+              <div class="sub-title">Ce que &#231;a fait</div>
+              <p>Le professionnel lib&#233;ral a un site qui convertit&#160;: les visiteurs prennent rendez-vous directement. Le CRM centralise la gestion client. La facturation et la comptabilit&#233; sont automatis&#233;es. L&#8217;agenda synchronise tout.</p>
+              <div class="sub-title">Comment &#231;a fonctionne</div>
+              <p>G&#233;n&#233;ration du site avec module de prise de RDV. Configuration du CRM et de la facturation. Synchronisation avec l&#8217;agenda. Formation initiale.</p>
+              <div class="sub-title">Outils mobilis&#233;s</div>
+              <p>G&#233;n&#233;rateur de sites IA &#8212; CRM M&#233;tier &#8212; Int&#233;gration comptable &#8212; Module agenda</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pack Franchise -->
+        <div class="pack-card" id="pc-7">
+          <div class="pack-header" onclick="togglePack('pc-7')">
+            <div class="pack-header-left">
+              <div class="pack-header-top">
+                <span class="pack-title">Pack Franchise / R&#233;seau</span>
+                <span class="pack-price">79 euros / mois</span>
+              </div>
+              <div class="pack-features-preview">Double interface si&#232;ge / point de vente &#8212; Reporting consolid&#233; multi-sites &#8212; CRM multi-entit&#233;s &#8212; D&#233;ploiement marque blanche</div>
+            </div>
+            <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="pack-body" id="pb-7">
+            <div class="pack-body-inner">
+              <div class="sub-title">Ce que &#231;a fait</div>
+              <p>Le si&#232;ge dispose d&#8217;un tableau de bord consolid&#233; sur l&#8217;ensemble du r&#233;seau. Chaque point de vente a sa propre interface avec ses propres donn&#233;es. Le reporting remonte automatiquement. Le tout est d&#233;ploy&#233; en marque blanche sous l&#8217;identit&#233; du r&#233;seau.</p>
+              <div class="sub-title">Comment &#231;a fonctionne</div>
+              <p>Configuration du si&#232;ge et des premiers points de vente. D&#233;ploiement progressif. Formation des responsables. Accompagnement au scaling.</p>
+              <div class="sub-title">Outils mobilis&#233;s</div>
+              <p>CRM M&#233;tier &#8212; BI Financi&#232;re &#8212; G&#233;n&#233;rateur de sites IA (marque blanche)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PROJECTION BOX -->
+      <div class="projection-box">
+        <p>15&#160;000 entreprises x 5% de conversion = 750 clients. Panier moyen 45 euros/mois = 33&#160;750 euros de MRR = 405&#160;000 euros d&#8217;ARR. Sans compter l&#8217;upsell vers l&#8217;accompagnement sur mesure.</p>
+        <div class="projection-numbers">
+          <div class="proj-num">
+            <div class="proj-num-value">750</div>
+            <div class="proj-num-label">clients</div>
+          </div>
+          <div class="proj-num">
+            <div class="proj-num-value">33 750 euros</div>
+            <div class="proj-num-label">MRR</div>
+          </div>
+          <div class="proj-num">
+            <div class="proj-num-value">405 000 euros</div>
+            <div class="proj-num-label">ARR</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ================================ TAB 7 : PROCHAINES ETAPES ================================ -->
+<div class="tab-panel" id="tab-etapes" role="tabpanel">
+
+  <section>
+    <div class="container">
+      <div class="section-label">Prochaines &#233;tapes</div>
+      <h2 class="section-title">Mettons-nous autour de la table</h2>
+      <p class="section-subtitle">Ce document est une invitation &#224; la discussion. Les modalit&#233;s restent &#224; d&#233;finir ensemble. Ce que je propose&#160;:</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-title">Un call avec Nathan</div>
+          <div class="step-body">Pour aligner la vision et comprendre vos priorit&#233;s par secteur. Identifier les branches les plus rapides &#224; activer. Cadrer les premi&#232;res actions concr&#232;tes.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-title">Une d&#233;mo live</div>
+          <div class="step-body">Je vous montre les outils en action&#160;: SiteAutoAI, FinPilot, WhatsApp CRM, les dashboards. Une heure suffit pour voir ce qui est possible. Pas de slides, de la r&#233;alit&#233;.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-title">Une proposition sur mesure</div>
+          <div class="step-body">On d&#233;finit ensemble les branches prioritaires, les fils mensuels, et le mod&#232;le de collaboration. Structure simple, transparente, et profitable des deux c&#244;t&#233;s.</div>
+        </div>
+      </div>
+
+      <div class="engagement-box">
+        Je pilote tout &#224; distance depuis Isra&#235;l. Pas de frais de structure superflus. Des fils mensuels r&#233;currents. Vous mettez en place des &#233;quipes internes sur chaque branche, je chapeaute la partie technique et strat&#233;gique. On scale ensemble, &#224; votre rythme et selon vos priorit&#233;s.
+      </div>
+
+      <div class="contact-box">
+        <div>
+          <div class="contact-name">J&#233;r&#233;my Bouznah</div>
+          <div class="contact-detail">Fondateur ORRTYL &#8212; Pilot&#233; depuis Isra&#235;l</div>
+        </div>
+        <div class="contact-avail">Disponible pour un call cette semaine</div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  Document confidentiel &#8212; Les Tricolores x ORRTYL &#8212; Mai 2026
+</footer>
+
+<script>
+// TAB SWITCHING
+(function() {
+  var btns = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.tab-panel');
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var target = btn.getAttribute('data-tab');
+
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+
+      btn.classList.add('active');
+      var panel = document.getElementById('tab-' + target);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+
+// EXPAND / COLLAPSE (Realisations)
+function toggleExpand(id) {
+  var card = document.getElementById(id);
+  var bodyId = id.replace('ec-', 'eb-');
+  var body = document.getElementById(bodyId);
+
+  if (!card || !body) return;
+
+  var isOpen = card.classList.contains('open');
+
+  if (isOpen) {
+    card.classList.remove('open');
+    body.style.maxHeight = '0';
+  } else {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+// PACK EXPAND / COLLAPSE (Secteurs)
+function togglePack(id) {
+  var card = document.getElementById(id);
+  var bodyId = id.replace('pc-', 'pb-');
+  var body = document.getElementById(bodyId);
+
+  if (!card || !body) return;
+
+  var isOpen = card.classList.contains('open');
+
+  if (isOpen) {
+    card.classList.remove('open');
+    body.style.maxHeight = '0';
+  } else {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+</script>
+
+</body>
+</html>
